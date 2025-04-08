@@ -1,9 +1,55 @@
+const restrictedImports = {
+  // Disable the base rule in favor of @typescript-eslint/no-restricted-imports
+  'no-restricted-imports': 'off',
+  '@typescript-eslint/no-restricted-imports': [
+    'error',
+    {
+      patterns: [
+        {
+          group: ['.*'],
+          message: 'Please use alias imports instead of relative imports.',
+        },
+      ],
+    },
+  ],
+};
+
+const importSortingRules = {
+  'sort-imports': [
+    'warn',
+    {
+      // sort-imports can't sort import lines so we'll use eslint-plugin-import instead
+      ignoreDeclarationSort: true,
+    },
+  ],
+  'import/order': [
+    'warn',
+    {
+      groups: [
+        'builtin', // built-in imports go first
+        'external', // then external imports
+        'internal', // then absolute imports
+        ['sibling', 'parent'], // then relative imports (siblings and parents can go together)
+        'index', // then index imports
+        'unknown', // then everything else
+      ],
+      'newlines-between': 'always',
+      alphabetize: {
+        order: 'asc',
+        caseInsensitive: true,
+      },
+    },
+  ],
+};
+
 const rules = {
   '@typescript-eslint/no-unused-vars': [
     'warn',
     { argsIgnorePattern: '^_', ignoreRestSiblings: true },
   ],
   'react/jsx-sort-props': 'warn',
+  ...restrictedImports,
+  ...importSortingRules,
 };
 
 module.exports = {
@@ -11,6 +57,8 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
+    'plugin:import/typescript',
+    'plugin:import/warnings',
     'plugin:react-hooks/recommended',
     'plugin:react/recommended',
     'plugin:react/jsx-runtime',
@@ -27,6 +75,7 @@ module.exports = {
       rules: {
         ...rules,
         '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/no-restricted-imports': 'off',
       },
     },
   ],
