@@ -48,6 +48,7 @@ const rules = {
     { argsIgnorePattern: '^_', ignoreRestSiblings: true },
   ],
   'react/jsx-sort-props': 'warn',
+  'react/prop-types': 'off',
   ...restrictedImports,
   ...importSortingRules,
 };

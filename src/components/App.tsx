@@ -1,13 +1,15 @@
-import '@/app/components/App.css';
+import { Code } from '@/components/Code';
+
+import '@/components/App.css';
 
 export function App() {
+  // const test = new RegExp(pattern: RegExp | string, flags?: string);
+
   const title = `new RegExp(pattern: RegExp | string, flags?: string)`;
   return (
     <>
-      <header>
-        <pre>
-          <code className="language-typescript">{title}</code>
-        </pre>
+      <header className="header">
+        <Code>{title}</Code>
       </header>
       <main className="main"></main>
     </>
