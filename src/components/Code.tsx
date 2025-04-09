@@ -1,18 +1,19 @@
-import parse from 'html-react-parser';
-
-import { highlight } from '@/highlighter';
+import { type Tokens, tokenColors } from '@/constants/tokens';
 
 import '@/components/Code.css';
 
-export function Code({ children: code }: { children: string }) {
-  // const test = new RegExp(pattern: RegExp | string, flags?: string)
-  const html = parse(highlight(code));
-
-  return <div className="code">{html}</div>;
-
-  // return (
-  //   <pre>
-  //     <code className="language-typescript">{html}</code>
-  //   </pre>
-  // );
+export function Code({ tokens }: { tokens: Tokens }) {
+  return (
+    <div className="code">
+      <pre>
+        <code className="language-typescript">
+          {tokens.map(([key, value], index) => (
+            <span key={index} style={{ color: tokenColors[key] }}>
+              {value}
+            </span>
+          ))}
+        </code>
+      </pre>
+    </div>
+  );
 }

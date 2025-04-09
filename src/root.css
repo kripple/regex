@@ -10,7 +10,7 @@ html,
 }
 
 html {
-  background-color: #1e1e1e;
+  background-color: var(--editor-background);
 }
 
 .root {
