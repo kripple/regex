@@ -1,23 +1,29 @@
-code,
-pre {
-  font-family: inherit;
-  font-size: inherit;
-}
-
-.code,
-code,
-pre {
+.code {
   border-radius: 4px;
   font-family:
     Menlo, Consolas, Monaco, 'Liberation Mono', 'Lucida Console', monospace;
   font-kerning: auto;
   font-optical-sizing: auto;
   font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
   letter-spacing: 0.3px;
   line-height: 24px;
   padding: 2px 4px;
   tab-size: 4;
   text-rendering: optimizeLegibility;
+}
+
+code,
+pre {
+  border-radius: inherit;
+  font-family: inherit;
+  font-kerning: inherit;
+  font-optical-sizing: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+  padding: inherit;
+  tab-size: inherit;
+  text-rendering: inherit;
 }
