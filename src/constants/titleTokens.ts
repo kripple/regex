@@ -1,20 +1,18 @@
 import type { Tokens } from '@/constants/tokens';
 
-const expected = `new RegExp(pattern: RegExp | string, flags?: string);`;
+const expected = `new RegExp(pattern: string, flags?: string)`;
 const tokens: Tokens = [
   ['keyword', 'new '],
   ['type', 'RegExp'],
   ['punctuation', '('],
   ['variable', 'pattern'],
   ['punctuation', ': '],
-  ['type', 'RegExp'],
-  ['punctuation', ' | '],
   ['type', 'string'],
   ['punctuation', ', '],
   ['variable', 'flags'],
   ['punctuation', '?: '],
   ['type', 'string'],
-  ['punctuation', ');'],
+  ['punctuation', ')'],
 ];
 
 export const titleTokens = (() => {

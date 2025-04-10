@@ -18,10 +18,3 @@ html {
   display: flex;
   flex-direction: column;
 }
-
-code,
-pre {
-  font-family: 'Anonymous Pro', monospace;
-  font-size: inherit;
-  letter-spacing: inherit;
-}
