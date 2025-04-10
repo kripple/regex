@@ -7,23 +7,7 @@
   font-size: 14px;
   letter-spacing: 0.3px;
   line-height: 24px;
-  padding: 2px 4px;
+  padding: 6px 12px;
   tab-size: 4;
   text-rendering: optimizeLegibility;
-}
-
-code,
-pre {
-  border-radius: inherit;
-  font-family: inherit;
-  font-kerning: inherit;
-  font-optical-sizing: inherit;
-  font-size: inherit;
-  font-style: inherit;
-  font-weight: inherit;
-  letter-spacing: inherit;
-  line-height: inherit;
-  padding: inherit;
-  tab-size: inherit;
-  text-rendering: inherit;
 }
