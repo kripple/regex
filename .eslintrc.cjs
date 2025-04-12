@@ -1,19 +1,3 @@
-const restrictedImports = {
-  // Disable the base rule in favor of @typescript-eslint/no-restricted-imports
-  'no-restricted-imports': 'off',
-  '@typescript-eslint/no-restricted-imports': [
-    'error',
-    {
-      patterns: [
-        {
-          group: ['.*'],
-          message: 'Please use alias imports instead of relative imports.',
-        },
-      ],
-    },
-  ],
-};
-
 const importSortingRules = {
   'sort-imports': [
     'warn',
@@ -49,7 +33,6 @@ const rules = {
   ],
   'react/jsx-sort-props': 'warn',
   'react/prop-types': 'off',
-  ...restrictedImports,
   ...importSortingRules,
 };
 
@@ -76,7 +59,6 @@ module.exports = {
       rules: {
         ...rules,
         '@typescript-eslint/no-explicit-any': 'off',
-        '@typescript-eslint/no-restricted-imports': 'off',
       },
     },
   ],
