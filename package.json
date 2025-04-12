@@ -12,7 +12,7 @@
   "scripts": {
     "start": "vite",
     "build": "tsc && vite build",
-    "lint": "eslint . && prettier --check .",
+    "lint": "eslint . && stylelint '**/*.css' && prettier --check .",
     "preview": "vite preview",
     "setup": "playwright install",
     "test": "playwright test"
